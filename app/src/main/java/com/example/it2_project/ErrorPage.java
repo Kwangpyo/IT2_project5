@@ -3,6 +3,8 @@ package com.example.it2_project;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+// error page code
+// error
 public class ErrorPage extends AppCompatActivity {
 
     @Override
