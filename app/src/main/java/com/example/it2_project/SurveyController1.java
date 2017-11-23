@@ -291,7 +291,7 @@ public class SurveyController1 extends AppCompatActivity {
                 if(questioncheck==false){
                     for(int i=0;i<=10;i++){
                         if(SurveyList.getInstance().getSurvey().get(i).getSelection()==1){
-                            //RadioButton radiobutton1=findViewById(R.id.Q1_1);
+                            RadioButton radiobutton1=findViewById(R.id.Q1_1);
                         }
                         else if(SurveyList.getInstance().getSurvey().get(i).getSelection()==2){
                             //RadioButton radiobutton
