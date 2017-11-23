@@ -3,7 +3,7 @@ package com.example.it2_project;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class Survey3 extends AppCompatActivity {
+public class SurveyController3 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

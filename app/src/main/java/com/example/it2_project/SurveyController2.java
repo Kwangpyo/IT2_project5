@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class Survey2 extends AppCompatActivity {
+public class SurveyController2 extends AppCompatActivity {
 
     Button finish;
 

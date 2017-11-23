@@ -5,16 +5,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
-import java.util.ArrayList;
-
-public class Survey1 extends AppCompatActivity {
+public class SurveyController1 extends AppCompatActivity {
 
     Button next;
+    boolean questioncheck=true;
     RadioGroup rg1,rg2,rg3,rg4,rg5,rg6,rg7,rg8,rg9,rg10;
 
-    public static ArrayList<Question> survey = new ArrayList<>();
+    //public static ArrayList<Question> survey = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,17 +33,6 @@ public class Survey1 extends AppCompatActivity {
         rg9 = (RadioGroup)findViewById(R.id.radioGroupQ9);
         rg10 = (RadioGroup)findViewById(R.id.radioGroupQ10);
 
-        next.setOnClickListener(new View.OnClickListener(){
-
-            @Override
-            public void onClick(View view) {
-
-                Intent intent1 = new Intent(getApplicationContext(), Survey2.class);
-                startActivity(intent1);
-
-            }
-        });
-
 
         rg1.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
 
@@ -52,19 +41,19 @@ public class Survey1 extends AppCompatActivity {
 
                 if(checkedId == R.id.Q1_1){
                     Question q1 = new Question("Q1", 1, true);
-                    survey.set(0, q1);
+                    SurveyList.getInstance().getSurvey().set(1, q1);
                 }
                 else if(checkedId == R.id.Q1_2){
                     Question q1 = new Question("Q1", 2, true);
-                    survey.add(q1);
+                    SurveyList.getInstance().getSurvey().set(1, q1);
                 }
                 else if(checkedId == R.id.Q1_3){
                     Question q1 = new Question("Q1", 3, true);
-                    survey.add(q1);
+                    SurveyList.getInstance().getSurvey().set(1, q1);
                 }
                 else if(checkedId == R.id.Q1_4){
                     Question q1 = new Question("Q1", 4, true);
-                    survey.add(q1);
+                    SurveyList.getInstance().getSurvey().set(1, q1);
                 }
             }
         });
@@ -77,19 +66,19 @@ public class Survey1 extends AppCompatActivity {
 
                 if(checkedId == R.id.Q2_1){
                     Question q2 = new Question("Q2", 1, true);
-                    survey.add(q2);
+                    SurveyList.getInstance().getSurvey().set(2, q2);
                 }
                 else if(checkedId == R.id.Q2_2){
                     Question q2 = new Question("Q2", 2, true);
-                    survey.add(q2);
+                    SurveyList.getInstance().getSurvey().set(2, q2);
                 }
                 else if(checkedId == R.id.Q2_3){
                     Question q2 = new Question("Q2", 3, true);
-                    survey.add(q2);
+                    SurveyList.getInstance().getSurvey().set(2, q2);
                 }
                 else if(checkedId == R.id.Q2_4){
                     Question q2 = new Question("Q2", 4, true);
-                    survey.add(q2);
+                    SurveyList.getInstance().getSurvey().set(2, q2);
                 }
             }
         });
@@ -101,19 +90,19 @@ public class Survey1 extends AppCompatActivity {
 
                 if(checkedId == R.id.Q3_1){
                     Question q3 = new Question("Q3", 1, true);
-                    survey.add(q3);
+                    SurveyList.getInstance().getSurvey().set(3, q3);
                 }
                 else if(checkedId == R.id.Q3_2){
                     Question q3 = new Question("Q3", 2, true);
-                    survey.add(q3);
+                    SurveyList.getInstance().getSurvey().set(3, q3);
                 }
                 else if(checkedId == R.id.Q3_3){
                     Question q3 = new Question("Q3", 3, true);
-                    survey.add(q3);
+                    SurveyList.getInstance().getSurvey().set(3, q3);
                 }
                 else if(checkedId == R.id.Q3_4){
                     Question q3 = new Question("Q3", 4, true);
-                    survey.add(q3);
+                    SurveyList.getInstance().getSurvey().set(3, q3);
                 }
             }
         });
@@ -124,20 +113,20 @@ public class Survey1 extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
 
                 if(checkedId == R.id.Q4_1){
-                    Question q3 = new Question("Q4", 1, true);
-                    survey.add(q3);
+                    Question q4 = new Question("Q4", 1, true);
+                    SurveyList.getInstance().getSurvey().set(4, q4);
                 }
                 else if(checkedId == R.id.Q4_2){
-                    Question q3 = new Question("Q4", 2, true);
-                    survey.add(q3);
+                    Question q4 = new Question("Q4", 2, true);
+                    SurveyList.getInstance().getSurvey().set(4, q4);
                 }
                 else if(checkedId == R.id.Q4_3){
-                    Question q3 = new Question("Q4", 3, true);
-                    survey.add(q3);
+                    Question q4 = new Question("Q4", 3, true);
+                    SurveyList.getInstance().getSurvey().set(4, q4);
                 }
                 else if(checkedId == R.id.Q4_4){
-                    Question q3 = new Question("Q4", 4, true);
-                    survey.add(q3);
+                    Question q4 = new Question("Q4", 4, true);
+                    SurveyList.getInstance().getSurvey().set(4, q4);
                 }
             }
         });
@@ -148,20 +137,20 @@ public class Survey1 extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
 
                 if(checkedId == R.id.Q5_1){
-                    Question q3 = new Question("Q5", 1, true);
-                    survey.add(q3);
+                    Question q5 = new Question("Q5", 1, true);
+                    SurveyList.getInstance().getSurvey().set(5, q5);
                 }
                 else if(checkedId == R.id.Q5_2){
-                    Question q3 = new Question("Q5", 2, true);
-                    survey.add(q3);
+                    Question q5 = new Question("Q5", 2, true);
+                    SurveyList.getInstance().getSurvey().set(5, q5);
                 }
                 else if(checkedId == R.id.Q5_3){
-                    Question q3 = new Question("Q3", 3, true);
-                    survey.add(q3);
+                    Question q5 = new Question("Q3", 3, true);
+                    SurveyList.getInstance().getSurvey().set(5, q5);
                 }
                 else if(checkedId == R.id.Q5_4){
-                    Question q3 = new Question("Q3", 4, true);
-                    survey.add(q3);
+                    Question q5 = new Question("Q3", 4, true);
+                    SurveyList.getInstance().getSurvey().set(5, q5);
                 }
             }
         });
@@ -172,20 +161,20 @@ public class Survey1 extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
 
                 if(checkedId == R.id.Q6_1){
-                    Question q3 = new Question("Q3", 1, true);
-                    survey.add(q3);
+                    Question q6 = new Question("Q3", 1, true);
+                    SurveyList.getInstance().getSurvey().set(6, q6);
                 }
                 else if(checkedId == R.id.Q6_2){
-                    Question q3 = new Question("Q3", 2, true);
-                    survey.add(q3);
+                    Question q6 = new Question("Q3", 2, true);
+                    SurveyList.getInstance().getSurvey().set(6, q6);
                 }
                 else if(checkedId == R.id.Q6_3){
-                    Question q3 = new Question("Q3", 3, true);
-                    survey.add(q3);
+                    Question q6 = new Question("Q3", 3, true);
+                    SurveyList.getInstance().getSurvey().set(6, q6);
                 }
                 else if(checkedId == R.id.Q6_4){
-                    Question q3 = new Question("Q3", 4, true);
-                    survey.add(q3);
+                    Question q6 = new Question("Q3", 4, true);
+                    SurveyList.getInstance().getSurvey().set(6, q6);
                 }
             }
         });
@@ -196,21 +185,20 @@ public class Survey1 extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
 
                 if(checkedId == R.id.Q7_1){
-                    Question q3 = new Question("Q3", 1, true);
-                    survey.add(q3);
+                    Question q7 = new Question("Q3", 1, true);
+                    SurveyList.getInstance().getSurvey().set(7, q7);
                 }
                 else if(checkedId == R.id.Q7_2){
-                    Question q3 = new Question("Q3", 2, true);
-                    survey.add(q3);
+                    Question q7 = new Question("Q3", 2, true);
+                    SurveyList.getInstance().getSurvey().set(7, q7);
                 }
                 else if(checkedId == R.id.Q7_3){
-                    Question q3 = new Question("Q3", 3, true);
-                    survey.add(q3);
+                    Question q7 = new Question("Q3", 3, true);
+                    SurveyList.getInstance().getSurvey().set(7, q7);
                 }
                 else if(checkedId == R.id.Q7_4){
-                    Question q3 = new Question("Q3", 4, true);
-                    survey.add(q3);
-                }
+                    Question q7 = new Question("Q3", 4, true);
+                    SurveyList.getInstance().getSurvey().set(7, q7);                }
             }
         });
         rg8.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -219,20 +207,22 @@ public class Survey1 extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
 
                 if(checkedId == R.id.Q8_1){
-                    Question q3 = new Question("Q3", 1, true);
-                    survey.add(q3);
+                    Question q8 = new Question("Q3", 1, true);
+                    SurveyList.getInstance().getSurvey().set(8, q8);
                 }
                 else if(checkedId == R.id.Q8_2){
-                    Question q3 = new Question("Q3", 2, true);
-                    survey.add(q3);
+                    Question q8 = new Question("Q3", 2, true);
+                    SurveyList.getInstance().getSurvey().set(8, q8);
+
                 }
                 else if(checkedId == R.id.Q8_3){
-                    Question q3 = new Question("Q3", 3, true);
-                    survey.add(q3);
+                    Question q8 = new Question("Q3", 3, true);
+                    SurveyList.getInstance().getSurvey().set(8, q8);
                 }
                 else if(checkedId == R.id.Q8_4){
-                    Question q3 = new Question("Q3", 4, true);
-                    survey.add(q3);
+                    Question q8 = new Question("Q3", 4, true);
+                    SurveyList.getInstance().getSurvey().set(8, q8);
+
                 }
             }
         });
@@ -242,20 +232,21 @@ public class Survey1 extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
 
                 if(checkedId == R.id.Q9_1){
-                    Question q3 = new Question("Q3", 1, true);
-                    survey.add(q3);
+                    Question q9 = new Question("Q3", 1, true);
+                    SurveyList.getInstance().getSurvey().set(9, q9);
+
                 }
                 else if(checkedId == R.id.Q9_2){
-                    Question q3 = new Question("Q3", 2, true);
-                    survey.add(q3);
+                    Question q9 = new Question("Q3", 2, true);
+                    SurveyList.getInstance().getSurvey().set(9, q9);
                 }
                 else if(checkedId == R.id.Q9_3){
-                    Question q3 = new Question("Q3", 3, true);
-                    survey.add(q3);
+                    Question q9 = new Question("Q3", 3, true);
+                    SurveyList.getInstance().getSurvey().set(9, q9);
                 }
                 else if(checkedId == R.id.Q9_4){
-                    Question q3 = new Question("Q3", 4, true);
-                    survey.add(q3);
+                    Question q9 = new Question("Q3", 4, true);
+                    SurveyList.getInstance().getSurvey().set(9, q9);
                 }
             }
         });
@@ -265,21 +256,54 @@ public class Survey1 extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
 
                 if(checkedId == R.id.Q10_1){
-                    Question q3 = new Question("Q3", 1, true);
-                    survey.add(q3);
+                    Question q10 = new Question("Q3", 1, true);
+                    SurveyList.getInstance().getSurvey().set(10, q10);
                 }
                 else if(checkedId == R.id.Q10_2){
-                    Question q3 = new Question("Q3", 2, true);
-                    survey.add(q3);
+                    Question q10 = new Question("Q3", 2, true);
+                    SurveyList.getInstance().getSurvey().set(10, q10);
                 }
                 else if(checkedId == R.id.Q10_3){
-                    Question q3 = new Question("Q3", 3, true);
-                    survey.add(q3);
+                    Question q10= new Question("Q3", 3, true);
+                    SurveyList.getInstance().getSurvey().set(10, q10);
                 }
                 else if(checkedId == R.id.Q10_4){
-                    Question q3 = new Question("Q3", 4, true);
-                    survey.add(q3);
+                    Question q10= new Question("Q3", 4, true);
+                    SurveyList.getInstance().getSurvey().set(10, q10);
                 }
+            }
+        });
+
+
+        next.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View view) {
+
+                for(int i=1; i<=10;i++){
+                    if(SurveyList.getInstance().getSurvey().get(i).isQuestionCheck()==false){
+                        questioncheck=false;
+
+                    }
+
+                }
+
+                if(questioncheck==false){
+                    for(int i=0;i<=10;i++){
+                        if(SurveyList.getInstance().getSurvey().get(i).getSelection()==1){
+                            //RadioButton radiobutton1=findViewById(R.id.Q1_1);
+                        }
+                        else if(SurveyList.getInstance().getSurvey().get(i).getSelection()==2){
+                            //RadioButton radiobutton
+                        }
+
+                    }
+                }
+
+
+                Intent intent1 = new Intent(getApplicationContext(), SurveyController2.class);
+                startActivity(intent1);
+
             }
         });
 
@@ -288,10 +312,7 @@ public class Survey1 extends AppCompatActivity {
 
 
 
-
-
-
-
-
     }
+
+
 }

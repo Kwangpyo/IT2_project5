@@ -8,7 +8,7 @@ public class Question {
 
     String Question_title;
     int selection;
-    boolean QuestionCheck;
+    boolean QuestionCheck=false;
 
 
     public Question(String Question_title, int selection, boolean QuestionCheck)
