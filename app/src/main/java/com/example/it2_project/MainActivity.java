@@ -96,6 +96,7 @@ public class MainActivity extends AppCompatActivity {
                 {
                     Toast.makeText(MainActivity.this, loginId + "님 자동로그인 입니다.", Toast.LENGTH_SHORT).show();
                     Student st = user.get(i);
+                    login_student = st;
                     Intent intent1 = new Intent(MainActivity.this, Studentstart.class);
                     intent1.putExtra("student_key", st);
                     startActivity(intent1);
