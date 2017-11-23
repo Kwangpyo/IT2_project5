@@ -19,39 +19,39 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/Q11"
+                android:id="@+id/Q21"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/Q11"
+                android:text="@string/Q21"
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
             <RadioGroup
-                android:id="@+id/radioGroupQ11"
+                android:id="@+id/radioGroupQ21"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/Q11">
+                android:layout_below="@id/Q21">
 
                 <RadioButton
-                    android:id="@+id/Q11_1"
+                    android:id="@+id/Q21_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="전혀 그렇지 않다" />
 
                 <RadioButton
-                    android:id="@+id/Q11_2"
+                    android:id="@+id/Q21_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="그렇지 않다" />
 
                 <RadioButton
-                    android:id="@+id/Q11_3"
+                    android:id="@+id/Q21_3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="그렇다" />
 
                 <RadioButton
-                    android:id="@+id/Q11_4"
+                    android:id="@+id/Q21_4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="매우 그렇다" />
@@ -59,40 +59,40 @@
             </RadioGroup>
 
             <TextView
-                android:id="@+id/Q12"
+                android:id="@+id/Q22"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/radioGroup11"
-                android:text="@string/Q12"
+                android:text="@string/Q22"
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
             <RadioGroup
-                android:id="@+id/radioGroupQ12"
+                android:id="@+id/radioGroupQ22"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/Q12">
+                android:layout_below="@id/Q22">
 
                 <RadioButton
-                    android:id="@+id/Q12_1"
+                    android:id="@+id/Q22_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="전혀 그렇지 않다" />
 
                 <RadioButton
-                    android:id="@+id/Q12_2"
+                    android:id="@+id/Q22_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="그렇지 않다" />
 
                 <RadioButton
-                    android:id="@+id/Q12_3"
+                    android:id="@+id/Q22_3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="그렇다" />
 
                 <RadioButton
-                    android:id="@+id/Q12_4"
+                    android:id="@+id/Q22_4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="매우 그렇다" />
@@ -100,40 +100,40 @@
             </RadioGroup>
 
             <TextView
-                android:id="@+id/Q13"
+                android:id="@+id/Q23"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/radioGroup12"
-                android:text="@string/Q13"
+                android:layout_below="@+id/radioGroup22"
+                android:text="@string/Q23"
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
             <RadioGroup
-                android:id="@+id/radioGroupQ13"
+                android:id="@+id/radioGroupQ23"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/Q13">
+                android:layout_below="@id/Q23">
 
                 <RadioButton
-                    android:id="@+id/Q13_1"
+                    android:id="@+id/Q23_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="전혀 그렇지 않다" />
 
                 <RadioButton
-                    android:id="@+id/Q13_2"
+                    android:id="@+id/Q23_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="그렇지 않다" />
 
                 <RadioButton
-                    android:id="@+id/Q13_3"
+                    android:id="@+id/Q23_3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="그렇다" />
 
                 <RadioButton
-                    android:id="@+id/Q13_4"
+                    android:id="@+id/Q23_4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="매우 그렇다" />
@@ -141,89 +141,84 @@
             </RadioGroup>
 
             <TextView
-                android:id="@+id/Q14"
+                android:id="@+id/Q24"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/radioGroup13"
-                android:text="@string/Q14"
+                android:text="@string/Q24"
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
             <RadioGroup
-                android:id="@+id/radioGroupQ14"
+                android:id="@+id/radioGroupQ24"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/Q14">
+                android:layout_below="@id/Q24">
 
                 <RadioButton
-                    android:id="@+id/Q14_1"
+                    android:id="@+id/Q24_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="전혀 그렇지 않다" />
 
                 <RadioButton
-                    android:id="@+id/Q14_2"
+                    android:id="@+id/Q24_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="그렇지 않다" />
 
                 <RadioButton
-                    android:id="@+id/Q14_3"
+                    android:id="@+id/Q24_3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="그렇다" />
 
                 <RadioButton
-                    android:id="@+id/Q14_4"
+                    android:id="@+id/Q24_4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="매우 그렇다" />
-
             </RadioGroup>
-
             <TextView
-                android:id="@+id/Q15"
+                android:id="@+id/Q25"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/radioGroup14"
-                android:text="@string/Q15"
+                android:text="@string/Q25"
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
             <RadioGroup
-                android:id="@+id/radioGroupQ15"
+                android:id="@+id/radioGroupQ25"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/Q15">
 
                 <RadioButton
-                    android:id="@+id/Q15_1"
+                    android:id="@+id/Q25_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="전혀 그렇지 않다" />
 
                 <RadioButton
-                    android:id="@+id/Q15_2"
+                    android:id="@+id/Q25_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="그렇지 않다" />
 
                 <RadioButton
-                    android:id="@+id/Q15_3"
+                    android:id="@+id/Q25_3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="그렇다" />
 
                 <RadioButton
-                    android:id="@+id/Q15_4"
+                    android:id="@+id/Q25_4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="매우 그렇다" />
 
             </RadioGroup>
-
-
-
         </LinearLayout>
 
 
@@ -235,39 +230,39 @@
 
 
             <TextView
-                android:id="@+id/Q16"
+                android:id="@+id/Q26"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/Q16"
+                android:text="@string/Q26"
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
             <RadioGroup
-                android:id="@+id/radioGroupQ16"
+                android:id="@+id/radioGroupQ26"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/Q16">
+                android:layout_below="@+id/Q26">
 
                 <RadioButton
-                    android:id="@+id/Q16_1"
+                    android:id="@+id/Q26_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="전혀 그렇지 않다" />
 
                 <RadioButton
-                    android:id="@+id/Q16_2"
+                    android:id="@+id/Q26_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="그렇지 않다" />
 
                 <RadioButton
-                    android:id="@+id/Q16_3"
+                    android:id="@+id/Q26_3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="그렇다" />
 
                 <RadioButton
-                    android:id="@+id/Q16_4"
+                    android:id="@+id/Q26_4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="매우 그렇다" />
@@ -275,40 +270,40 @@
             </RadioGroup>
 
             <TextView
-                android:id="@+id/Q17"
+                android:id="@+id/Q27"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/radioGroup16"
-                android:text="@string/Q17"
+                android:text="@string/Q27"
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
             <RadioGroup
-                android:id="@+id/radioGroupQ17"
+                android:id="@+id/radioGroupQ27"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/Q17">
 
                 <RadioButton
-                    android:id="@+id/Q17_1"
+                    android:id="@+id/Q27_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="전혀 그렇지 않다" />
 
                 <RadioButton
-                    android:id="@+id/Q17_2"
+                    android:id="@+id/Q27_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="그렇지 않다" />
 
                 <RadioButton
-                    android:id="@+id/Q17_3"
+                    android:id="@+id/Q27_3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="그렇다" />
 
                 <RadioButton
-                    android:id="@+id/Q17_4"
+                    android:id="@+id/Q27_4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="매우 그렇다" />
@@ -316,40 +311,40 @@
             </RadioGroup>
 
             <TextView
-                android:id="@+id/Q18"
+                android:id="@+id/Q28"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/radioGroup17"
-                android:text="@string/Q18"
+                android:text="@string/Q28"
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
             <RadioGroup
-                android:id="@+id/radioGroupQ18"
+                android:id="@+id/radioGroupQ28"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/Q18">
 
                 <RadioButton
-                    android:id="@+id/Q18_1"
+                    android:id="@+id/Q28_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="전혀 그렇지 않다" />
 
                 <RadioButton
-                    android:id="@+id/Q18_2"
+                    android:id="@+id/Q28_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="그렇지 않다" />
 
                 <RadioButton
-                    android:id="@+id/Q18_3"
+                    android:id="@+id/Q28_3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="그렇다" />
 
                 <RadioButton
-                    android:id="@+id/Q18_4"
+                    android:id="@+id/Q28_4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="매우 그렇다" />
@@ -357,40 +352,40 @@
             </RadioGroup>
 
             <TextView
-                android:id="@+id/Q19"
+                android:id="@+id/Q29"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/radioGroup18"
-                android:text="@string/Q19"
+                android:text="@string/Q29"
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
             <RadioGroup
-                android:id="@+id/radioGroupQ19"
+                android:id="@+id/radioGroupQ29"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/Q18">
+                android:layout_below="@id/Q29">
 
                 <RadioButton
-                    android:id="@+id/Q19_1"
+                    android:id="@+id/Q29_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="전혀 그렇지 않다" />
 
                 <RadioButton
-                    android:id="@+id/Q19_2"
+                    android:id="@+id/Q29_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="그렇지 않다" />
 
                 <RadioButton
-                    android:id="@+id/Q19_3"
+                    android:id="@+id/Q29_3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="그렇다" />
 
                 <RadioButton
-                    android:id="@+id/Q19_4"
+                    android:id="@+id/Q29_4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="매우 그렇다" />
@@ -399,28 +394,28 @@
 
 
             <TextView
-                android:id="@+id/Q20"
+                android:id="@+id/Q30"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/radioGroup19"
-                android:text="@string/Q20"
+                android:text="@string/Q30"
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
             <RadioGroup
-                android:id="@+id/radioGroupQ20"
+                android:id="@+id/radioGroupQ30"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/Q19">
+                android:layout_below="@id/Q30">
 
                 <RadioButton
-                    android:id="@+id/Q20_1"
+                    android:id="@+id/Q30_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="전혀 그렇지 않다" />
 
                 <RadioButton
-                    android:id="@+id/Q20_2"
+                    android:id="@+id/Q30_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="그렇지 않다" />
@@ -432,7 +427,7 @@
                     android:text="그렇다" />
 
                 <RadioButton
-                    android:id="@+id/Q20_4"
+                    android:id="@+id/Q30_4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="매우 그렇다" />
@@ -442,8 +437,8 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="NEXT"
-                android:id="@+id/NEXT2"
+                android:text="FINISH"
+                android:id="@+id/FINISH"
                 android:layout_gravity="right"/>
 
 

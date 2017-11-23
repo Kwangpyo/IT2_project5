@@ -111,12 +111,180 @@ public class Survey1 extends AppCompatActivity {
                     Question q3 = new Question("Q3", 3, true);
                     survey.add(q3);
                 }
-                else if(checkedId == R.id.Q2_4){
+                else if(checkedId == R.id.Q3_4){
                     Question q3 = new Question("Q3", 4, true);
                     survey.add(q3);
                 }
             }
         });
+
+        rg4.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+
+                if(checkedId == R.id.Q4_1){
+                    Question q3 = new Question("Q4", 1, true);
+                    survey.add(q3);
+                }
+                else if(checkedId == R.id.Q4_2){
+                    Question q3 = new Question("Q4", 2, true);
+                    survey.add(q3);
+                }
+                else if(checkedId == R.id.Q4_3){
+                    Question q3 = new Question("Q4", 3, true);
+                    survey.add(q3);
+                }
+                else if(checkedId == R.id.Q4_4){
+                    Question q3 = new Question("Q4", 4, true);
+                    survey.add(q3);
+                }
+            }
+        });
+
+        rg5.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+
+                if(checkedId == R.id.Q5_1){
+                    Question q3 = new Question("Q5", 1, true);
+                    survey.add(q3);
+                }
+                else if(checkedId == R.id.Q5_2){
+                    Question q3 = new Question("Q5", 2, true);
+                    survey.add(q3);
+                }
+                else if(checkedId == R.id.Q5_3){
+                    Question q3 = new Question("Q3", 3, true);
+                    survey.add(q3);
+                }
+                else if(checkedId == R.id.Q5_4){
+                    Question q3 = new Question("Q3", 4, true);
+                    survey.add(q3);
+                }
+            }
+        });
+
+        rg6.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+
+                if(checkedId == R.id.Q6_1){
+                    Question q3 = new Question("Q3", 1, true);
+                    survey.add(q3);
+                }
+                else if(checkedId == R.id.Q6_2){
+                    Question q3 = new Question("Q3", 2, true);
+                    survey.add(q3);
+                }
+                else if(checkedId == R.id.Q6_3){
+                    Question q3 = new Question("Q3", 3, true);
+                    survey.add(q3);
+                }
+                else if(checkedId == R.id.Q6_4){
+                    Question q3 = new Question("Q3", 4, true);
+                    survey.add(q3);
+                }
+            }
+        });
+
+        rg7.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+
+                if(checkedId == R.id.Q7_1){
+                    Question q3 = new Question("Q3", 1, true);
+                    survey.add(q3);
+                }
+                else if(checkedId == R.id.Q7_2){
+                    Question q3 = new Question("Q3", 2, true);
+                    survey.add(q3);
+                }
+                else if(checkedId == R.id.Q7_3){
+                    Question q3 = new Question("Q3", 3, true);
+                    survey.add(q3);
+                }
+                else if(checkedId == R.id.Q7_4){
+                    Question q3 = new Question("Q3", 4, true);
+                    survey.add(q3);
+                }
+            }
+        });
+        rg8.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+
+                if(checkedId == R.id.Q8_1){
+                    Question q3 = new Question("Q3", 1, true);
+                    survey.add(q3);
+                }
+                else if(checkedId == R.id.Q8_2){
+                    Question q3 = new Question("Q3", 2, true);
+                    survey.add(q3);
+                }
+                else if(checkedId == R.id.Q8_3){
+                    Question q3 = new Question("Q3", 3, true);
+                    survey.add(q3);
+                }
+                else if(checkedId == R.id.Q8_4){
+                    Question q3 = new Question("Q3", 4, true);
+                    survey.add(q3);
+                }
+            }
+        });
+        rg9.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+
+                if(checkedId == R.id.Q9_1){
+                    Question q3 = new Question("Q3", 1, true);
+                    survey.add(q3);
+                }
+                else if(checkedId == R.id.Q9_2){
+                    Question q3 = new Question("Q3", 2, true);
+                    survey.add(q3);
+                }
+                else if(checkedId == R.id.Q9_3){
+                    Question q3 = new Question("Q3", 3, true);
+                    survey.add(q3);
+                }
+                else if(checkedId == R.id.Q9_4){
+                    Question q3 = new Question("Q3", 4, true);
+                    survey.add(q3);
+                }
+            }
+        });
+        rg10.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+
+                if(checkedId == R.id.Q10_1){
+                    Question q3 = new Question("Q3", 1, true);
+                    survey.add(q3);
+                }
+                else if(checkedId == R.id.Q10_2){
+                    Question q3 = new Question("Q3", 2, true);
+                    survey.add(q3);
+                }
+                else if(checkedId == R.id.Q10_3){
+                    Question q3 = new Question("Q3", 3, true);
+                    survey.add(q3);
+                }
+                else if(checkedId == R.id.Q10_4){
+                    Question q3 = new Question("Q3", 4, true);
+                    survey.add(q3);
+                }
+            }
+        });
+
+
+
 
 
 

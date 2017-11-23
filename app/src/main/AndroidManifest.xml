@@ -33,7 +33,8 @@
         <activity android:name=".DetailFragment" />
         <activity android:name=".Survey1" />
         <activity android:name=".Survey2" />
-        <activity android:name=".ErrorPage"></activity>
+        <activity android:name=".ErrorPage" />
+        <activity android:name=".Survey3"></activity>
     </application>
 
 </manifest>

@@ -23,7 +23,7 @@
                     android:id="@+id/Q1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="1. 뀨잉"
+                    android:text="@string/Q1"
                     android:textSize="20dp"
                     android:textStyle="bold" />
 
@@ -64,7 +64,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/radioGroup1"
-                    android:text="2. 끵"
+                    android:text="@string/Q2"
                     android:textSize="20dp"
                     android:textStyle="bold" />
 
@@ -105,7 +105,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/radioGroup2"
-                    android:text="3. 뿌잉"
+                    android:text="@string/Q3"
                     android:textSize="20dp"
                     android:textStyle="bold" />
 
@@ -146,7 +146,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/radioGroup3"
-                    android:text="4. 광표 천재"
+                    android:text="@string/Q5"
                     android:textSize="20dp"
                     android:textStyle="bold" />
 
@@ -187,7 +187,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/radioGroup4"
-                    android:text="5. 광표 섹시"
+                    android:text="@string/Q5"
                     android:textSize="20dp"
                     android:textStyle="bold" />
 
@@ -238,7 +238,7 @@
                     android:id="@+id/Q6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="6. 광표 멋쟁이"
+                    android:text="@string/Q6"
                     android:textSize="20dp"
                     android:textStyle="bold" />
 
@@ -279,7 +279,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/radioGroup6"
-                    android:text="7. 광표 개간지"
+                    android:text="@string/Q7"
                     android:textSize="20dp"
                     android:textStyle="bold" />
 
@@ -320,7 +320,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/radioGroup7"
-                    android:text="8. 광표 거의 원빈"
+                    android:text="@string/Q8"
                     android:textSize="20dp"
                     android:textStyle="bold" />
 
@@ -361,7 +361,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/radioGroup8"
-                    android:text="9. 나싶나"
+                    android:text="@string/Q9"
                     android:textSize="20dp"
                     android:textStyle="bold" />
 
@@ -403,7 +403,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/radioGroup9"
-                    android:text="10. 폐고파"
+                    android:text="@string/Q10"
                     android:textSize="20dp"
                     android:textStyle="bold" />
 
