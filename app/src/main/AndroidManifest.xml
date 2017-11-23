@@ -31,9 +31,10 @@
         <activity android:name=".Studentstart" />
         <activity android:name=".ListFragment" />
         <activity android:name=".DetailFragment" />
-        <activity android:name=".Survey1" />
-        <activity android:name=".Survey2" />
-        <activity android:name=".ErrorPage"></activity>
+        <activity android:name=".SurveyController1" />
+        <activity android:name=".SurveyController2" />
+        <activity android:name=".ErrorPage" />
+        <activity android:name=".SurveyController3"></activity>
     </application>
 
 </manifest>

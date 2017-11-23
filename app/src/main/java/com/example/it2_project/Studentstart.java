@@ -65,7 +65,7 @@ public class Studentstart extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent intent2 = new Intent(getApplicationContext(),Survey1.class);
+                Intent intent2 = new Intent(getApplicationContext(),SurveyController1.class);
                 startActivity(intent2);
             }
         });
