@@ -77,7 +77,7 @@ public class OpenClientAPI {
         //  String id1;
         //   id1 = datas.getJSONObject(1).getString("_id");
 
-        for(int i=8;i<size;i++)
+        for(int i=0;i<size;i++)
         {
 //            Person st = new Person();
   //          st.setId(datas.getJSONObject(i).getString("title"));
