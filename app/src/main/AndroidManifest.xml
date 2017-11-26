@@ -35,6 +35,7 @@
         <activity android:name=".SurveyController2" />
         <activity android:name=".ErrorPage" />
         <activity android:name=".SurveyController3"></activity>
+        <activity android:name=".CallController"></activity>
     </application>
 
 </manifest>

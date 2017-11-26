@@ -19,7 +19,7 @@ import java.util.ArrayList;
  */
 
 public class OpenClientAPI {
-    final static String openURL = "http://192.168.0.6:3000/getAllTaskDocuments";
+    final static String openURL = "http://172.30.1.26:3000/getAllTaskDocuments";
     ArrayList<Student> persons = new ArrayList<>();
 
     public ArrayList<Student> getJson() {
