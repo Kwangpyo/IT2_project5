@@ -25,7 +25,7 @@
 
     <Button
         android:id="@+id/survey"
-        android:layout_margin="30dp"
+        android:layout_margin="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textview_s"
@@ -38,7 +38,7 @@
         android:id="@+id/SOS"
         android:text="SOS"
         android:layout_centerHorizontal="true"
-        android:layout_margin="30dp"
+        android:layout_margin="20dp"
         android:layout_marginTop="80dp"
         android:layout_below="@+id/survey"/>
 
@@ -48,9 +48,19 @@
         android:id="@+id/singo"
         android:text="DECLARATION"
         android:layout_centerHorizontal="true"
-        android:layout_margin="30dp"
+        android:layout_margin="20dp"
         android:layout_marginTop="80dp"
         android:layout_below="@+id/SOS"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/consult"
+        android:text="CONSULTING"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="20dp"
+        android:layout_marginTop="80dp"
+        android:layout_below="@+id/singo"/>
 
 
 </RelativeLayout>

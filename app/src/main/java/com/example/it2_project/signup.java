@@ -10,6 +10,8 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import java.util.concurrent.ExecutionException;
+
 public class signup extends AppCompatActivity {
 
     Button signupcomplete;
@@ -55,18 +57,38 @@ public class signup extends AppCompatActivity {
                     }
 
                     if (check == 0) {
-                            Student newstudent = new Student(new_id, new_pwd1,name);
-                            MainActivity.user.add(newstudent);
-                            MainActivity.user.add(newstudent);
+                            //Student newstudent = new Student(new_id, new_pwd1,name);
+                            //MainActivity.user.add(newstudent);
+                            //MainActivity.user.add(newstudent);
+                            OpenAddAPITask t = new OpenAddAPITask();
+
+                            try{
+
+                                int i = t.execute(new_id,name,new_pwd1).get();
+
+                            }
+                            catch (InterruptedException e) {
+                                Intent error1 = new Intent(getApplicationContext(), ErrorPage.class);
+                                startActivity(error1);
+                                e.printStackTrace();
+
+                            }
+                            catch (ExecutionException e) {
+                                Intent error2 = new Intent(getApplicationContext(), ErrorPage.class);
+                                startActivity(error2);
+                                e.printStackTrace();
+                            }
+
                             Toast.makeText(getApplicationContext(), "회원 가입 완료", Toast.LENGTH_SHORT).show();
                             Intent intent2 = new Intent(getApplicationContext(), MainActivity.class);
                             startActivity(intent2);
 
 
                     }
-                    else if (new_pwd1.equals(new_pwd2) == false) {
-                        Toast.makeText(getApplicationContext(), "비밀번호를 다르게 입력했습니다", Toast.LENGTH_SHORT).show();
-                    }
+
+                }
+                else if (new_pwd1.equals(new_pwd2) == false) {
+                    Toast.makeText(getApplicationContext(), "비밀번호를 다르게 입력했습니다", Toast.LENGTH_SHORT).show();
                 }
 
             }
