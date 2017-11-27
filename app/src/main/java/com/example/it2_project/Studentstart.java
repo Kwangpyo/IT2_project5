@@ -15,6 +15,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class Studentstart extends AppCompatActivity {
@@ -23,7 +24,8 @@ public class Studentstart extends AppCompatActivity {
     Button survey_start;
     Button SOS;
     Button singo;
-
+    Button consult;
+    TextView text;
     Student login_student;
 
     @Override
@@ -40,8 +42,11 @@ public class Studentstart extends AppCompatActivity {
         survey_start = (Button)findViewById(R.id.survey);
         SOS = (Button)findViewById(R.id.SOS);
         singo = (Button)findViewById(R.id.singo);
-
+        consult = (Button)findViewById(R.id.consult);
+        text = (TextView)findViewById(R.id.textview_s);
         login_student = (Student)getIntent().getSerializableExtra("student_key");
+
+        text.setText(login_student.getId());
 
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -94,9 +99,20 @@ public class Studentstart extends AppCompatActivity {
             }
         });
 
+        consult.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(getApplicationContext(), ConsultController.class);
+                startActivity(intent);
+
+            }
+        });
+
+
+
 
     }
-
-
 
 }
