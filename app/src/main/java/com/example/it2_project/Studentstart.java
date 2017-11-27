@@ -94,8 +94,9 @@ public class Studentstart extends AppCompatActivity {
             public void onClick(View view) {
 
                 Intent dec = new Intent(getApplicationContext(),GPSController.class);
+                dec.putExtra("student_key", login_student);
                 startActivity(dec);
-                
+                finish();
 
             }
         });
