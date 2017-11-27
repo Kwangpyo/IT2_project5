@@ -24,7 +24,7 @@ import java.util.concurrent.ExecutionException;
 
 public class GPSController extends AppCompatActivity {
 
-    TextView t1;
+
     public Student login_student;
 
     @Override
@@ -33,7 +33,7 @@ public class GPSController extends AppCompatActivity {
         setContentView(R.layout.activity_gpscontroller);
         login_student = (Student)getIntent().getSerializableExtra("student_key");
 
-        t1 = (TextView)findViewById(R.id.text11);
+
         getLocation();
     }
 
@@ -48,7 +48,7 @@ public class GPSController extends AppCompatActivity {
 
                 if(report.areAllPermissionsGranted())
                 {
-                    Toast.makeText(GPSController.this,"Granted",Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(GPSController.this,"Granted",Toast.LENGTH_SHORT).show();
                     requestLocation();
                 }
 
@@ -72,7 +72,6 @@ public class GPSController extends AppCompatActivity {
             public void onSuccess(Location location) {
                 if(location != null)
                 {
-                    t1.setText(""+ location.getLatitude() + "  " + location.getLongitude());
 
                     OpenLocationAPI getLoc = new OpenLocationAPI();
 
@@ -94,8 +93,10 @@ public class GPSController extends AppCompatActivity {
                         e.printStackTrace();
                     }
 
-
-
+                    Toast.makeText(getApplicationContext(),"신고가 접수되었습니다",Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(getApplicationContext(),Studentstart.class);
+                    intent.putExtra("student_key", login_student);
+                    startActivity(intent);
 
                 }
 

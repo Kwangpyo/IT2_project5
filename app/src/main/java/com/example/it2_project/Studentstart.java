@@ -46,7 +46,7 @@ public class Studentstart extends AppCompatActivity {
         text = (TextView)findViewById(R.id.textview_s);
         login_student = (Student)getIntent().getSerializableExtra("student_key");
 
-        text.setText(login_student.getId());
+        text.setText("ID : " + login_student.getId());
 
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
