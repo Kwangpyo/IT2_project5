@@ -93,7 +93,8 @@ public class Studentstart extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-
+                Intent dec = new Intent(getApplicationContext(),GPSController.class);
+                startActivity(dec);
                 
 
             }
