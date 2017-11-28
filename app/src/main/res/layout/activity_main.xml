@@ -14,7 +14,7 @@
         android:id="@+id/emailInput"
         android:layout_centerHorizontal="true"
         android:hint="ID"
-        android:layout_marginTop="151dp" />
+        android:layout_marginTop="280dp" />
 
     <EditText
         android:layout_width="300dp"

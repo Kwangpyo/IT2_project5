@@ -7,6 +7,19 @@
     tools:context="com.example.it2_project.Studentstart">
 
     <Button
+        android:id="@+id/permission"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CALL per"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/PERMISSION2"
+        android:text="GPS per"
+        android:layout_centerHorizontal="true"/>
+
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/logout_s"

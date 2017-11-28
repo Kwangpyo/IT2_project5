@@ -19,9 +19,12 @@ import android.widget.Toast;
  */
 
 public class CallController extends AppCompatActivity{
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
         call();
     }
 

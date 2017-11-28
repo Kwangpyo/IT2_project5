@@ -6,6 +6,29 @@
     android:layout_height="match_parent"
     tools:context="com.example.it2_project.GPSController">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/gpslon"
+        android:layout_above="@+id/gpscontroller_Dec"
+        android:layout_centerHorizontal="true"
+        android:text="Longitude : "/>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/gpslat"
+        android:layout_above="@+id/gpslon"
+        android:layout_centerHorizontal="true"
+        android:text="Latitude : "/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/gpscontroller_Dec"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="신고"
+        />
 
 </RelativeLayout>

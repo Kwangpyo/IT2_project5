@@ -18,6 +18,14 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.karumi.dexter.Dexter;
+import com.karumi.dexter.MultiplePermissionsReport;
+import com.karumi.dexter.PermissionToken;
+import com.karumi.dexter.listener.PermissionRequest;
+import com.karumi.dexter.listener.multi.MultiplePermissionsListener;
+
+import java.util.List;
+
 public class Studentstart extends AppCompatActivity {
 
     Button logout;
@@ -27,6 +35,9 @@ public class Studentstart extends AppCompatActivity {
     Button consult;
     TextView text;
     Student login_student;
+
+    Button permission;
+    Button permission2;
 
     @Override
     public void onBackPressed() {
@@ -45,6 +56,9 @@ public class Studentstart extends AppCompatActivity {
         consult = (Button)findViewById(R.id.consult);
         text = (TextView)findViewById(R.id.textview_s);
         login_student = (Student)getIntent().getSerializableExtra("student_key");
+
+        permission = (Button)findViewById(R.id.permission);
+        permission2 = (Button)findViewById(R.id.PERMISSION2);
 
         text.setText("ID : " + login_student.getId());
 
@@ -113,8 +127,118 @@ public class Studentstart extends AppCompatActivity {
         });
 
 
+        permission.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view) {
+
+                requestcallpermission();
+
+            }
+        });
+
+        permission2.setOnClickListener(new View.OnClickListener()
+        {
+
+            @Override
+            public void onClick(View view) {
+
+                requestGPSPermission();
+
+            }
+        });
 
 
     }
+
+    public void requestGPSPermission()
+    {
+        Dexter.withActivity(Studentstart.this)
+                .withPermissions(
+                        Manifest.permission.ACCESS_COARSE_LOCATION,
+                        Manifest.permission.ACCESS_FINE_LOCATION
+                ).withListener(new MultiplePermissionsListener() {
+            @Override public void onPermissionsChecked(MultiplePermissionsReport report) {
+
+                if(report.areAllPermissionsGranted())
+                {
+                    Toast.makeText(Studentstart.this,"Granted",Toast.LENGTH_SHORT).show();
+
+                }
+
+                    /* ... */}
+
+            @Override public void onPermissionRationaleShouldBeShown(List<PermissionRequest> permissions, PermissionToken token) {
+                    /* ... */}
+
+        }).check();
+    }
+
+    public void requestcallpermission() {
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            int permissionResult = checkSelfPermission(Manifest.permission.CALL_PHONE);
+
+            if (permissionResult == PackageManager.PERMISSION_DENIED) {
+                if (shouldShowRequestPermissionRationale(Manifest.permission.CALL_PHONE)) {
+                    AlertDialog.Builder dialog = new AlertDialog.Builder(Studentstart.this);
+                    dialog.setTitle("권한이 필요합니다")
+                            .setMessage("이 기능을 사용하기 위해서느 단말기의 \"전화걸기\" 권한이 필요합니다. 계속 하시겠습니까?")
+                            .setPositiveButton("네", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+
+                                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                                        requestPermissions(new String[]{Manifest.permission.CALL_PHONE}, 1000);
+                                    }
+
+
+                                }
+                            })
+                            .setNegativeButton("아니요", new DialogInterface.OnClickListener() {
+
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    Toast.makeText(Studentstart.this, "기능을 취소했습니다", Toast.LENGTH_SHORT).show();
+                                }
+                            })
+                            .create()
+                            .show();
+                } else {
+                    requestPermissions(new String[]{Manifest.permission.CALL_PHONE}, 1000);
+                }
+
+            } else {
+                Toast.makeText(getApplicationContext(),"권한이 승인되어있습니다1",Toast.LENGTH_SHORT).show();
+            }
+        } else {
+            Toast.makeText(getApplicationContext(),"권한이 승인되어있습니다2",Toast.LENGTH_SHORT).show();
+        }
+
+
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+
+        if (requestCode == 1000) {
+
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+
+                Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:010-1111-2222"));
+
+                if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                    startActivity(intent);
+                }
+            } else {
+                Toast.makeText(Studentstart.this, "권한요청을 거부했습니다.", Toast.LENGTH_SHORT).show();
+
+            }
+        }
+
+    }
+
+
+
 
 }

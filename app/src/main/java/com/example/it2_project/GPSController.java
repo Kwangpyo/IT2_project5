@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.location.Location;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -24,7 +25,8 @@ import java.util.concurrent.ExecutionException;
 
 public class GPSController extends AppCompatActivity {
 
-
+    TextView text;
+    Button dec;
     public Student login_student;
 
     @Override
@@ -32,9 +34,20 @@ public class GPSController extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gpscontroller);
         login_student = (Student)getIntent().getSerializableExtra("student_key");
+        text = (TextView)findViewById(R.id.gpstext);
+        dec = (Button)findViewById(R.id.gpscontroller_Dec);
 
+        dec.setOnClickListener(new View.OnClickListener()
+        {
 
-        getLocation();
+            @Override
+            public void onClick(View view) {
+
+                getLocation();
+
+            }
+        });
+
     }
 
     public void getLocation(){
@@ -49,6 +62,7 @@ public class GPSController extends AppCompatActivity {
                 if(report.areAllPermissionsGranted())
                 {
                     //Toast.makeText(GPSController.this,"Granted",Toast.LENGTH_SHORT).show();
+                    Log.d("qwe1","asd1");
                     requestLocation();
                 }
 
@@ -66,12 +80,15 @@ public class GPSController extends AppCompatActivity {
 
     private void requestLocation()
     {
+        Log.d("qwe2","asd2");
         mLocationClient = LocationServices.getFusedLocationProviderClient(GPSController.this);
         mLocationClient.getLastLocation().addOnSuccessListener(GPSController.this, new OnSuccessListener<Location>() {
             @Override
             public void onSuccess(Location location) {
+                Log.d("qwe3","asd3");
                 if(location != null)
                 {
+                    Log.d("qwe","asd");
 
                     OpenLocationAPI getLoc = new OpenLocationAPI();
 
@@ -93,10 +110,8 @@ public class GPSController extends AppCompatActivity {
                         e.printStackTrace();
                     }
 
-                    Toast.makeText(getApplicationContext(),"신고가 접수되었습니다",Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(getApplicationContext(),Studentstart.class);
-                    intent.putExtra("student_key", login_student);
-                    startActivity(intent);
+                    text.setText(location.getLatitude() + "  " + location.getLongitude());
+                    Toast.makeText(getApplicationContext(),"신고가 접수되었습니다 "+location.getLatitude()+" "+location.getLongitude(),Toast.LENGTH_SHORT).show();
 
                 }
 
