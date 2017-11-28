@@ -1,6 +1,8 @@
 package com.example.it2_project;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -289,20 +291,22 @@ public class SurveyController1 extends AppCompatActivity {
                 }
 
                 if(questioncheck==false){
-                    for(int i=0;i<=10;i++){
-                        if(SurveyList.getInstance().getSurvey().get(i).getSelection()==1){
-                            RadioButton radiobutton1=findViewById(R.id.Q1_1);
+                    AlertDialog.Builder alert = new AlertDialog.Builder(SurveyController1.this);
+                    alert.setPositiveButton("확인", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
                         }
-                        else if(SurveyList.getInstance().getSurvey().get(i).getSelection()==2){
-                            //RadioButton radiobutton
-                        }
-
-                    }
+                    });
+                    alert.setMessage("설문조사가 완료되지 않았습니다.");
+                    alert.show();
+                }
+                else{
+                    Intent intent1 = new Intent(getApplicationContext(), SurveyController2.class);
+                    startActivity(intent1);
                 }
 
 
-                Intent intent1 = new Intent(getApplicationContext(), SurveyController2.class);
-                startActivity(intent1);
 
             }
         });
