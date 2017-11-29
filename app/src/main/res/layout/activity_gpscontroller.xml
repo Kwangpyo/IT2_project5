@@ -4,7 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.it2_project.GPSController">
+    tools:context="com.example.it2_project.GPSController"
+    android:background="@drawable/sea_opt">
+
+
+
+
 
     <TextView
         android:layout_width="wrap_content"
@@ -12,7 +17,9 @@
         android:id="@+id/gpslon"
         android:layout_above="@+id/gpscontroller_Dec"
         android:layout_centerHorizontal="true"
-        android:text="Longitude : "/>
+        android:textColor="#fff"
+        android:textSize="18dp"
+        android:text="Longitude"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -20,7 +27,9 @@
         android:id="@+id/gpslat"
         android:layout_above="@+id/gpslon"
         android:layout_centerHorizontal="true"
-        android:text="Latitude : "/>
+        android:textColor="#fff"
+        android:textSize="18dp"
+        android:text="Latitude"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -29,6 +38,14 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:text="신고"
+        android:textSize="16dp"
+        android:textColor="#fff"
+        android:textAlignment="center"
+        android:background="@drawable/border"
+        android:layout_gravity="center"
+        android:letterSpacing="0.025"
+        android:padding="10dp"
+        android:layout_marginTop="20dp"
         />
 
 </RelativeLayout>

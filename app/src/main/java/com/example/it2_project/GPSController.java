@@ -25,7 +25,8 @@ import java.util.concurrent.ExecutionException;
 
 public class GPSController extends AppCompatActivity {
 
-    TextView text;
+    TextView lon;
+    TextView lat;
     Button dec;
     public Student login_student;
 
@@ -34,7 +35,8 @@ public class GPSController extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gpscontroller);
         login_student = (Student)getIntent().getSerializableExtra("student_key");
-        text = (TextView)findViewById(R.id.gpstext);
+        lon = (TextView)findViewById(R.id.gpslon);
+        lat = (TextView)findViewById(R.id.gpslat);
         dec = (Button)findViewById(R.id.gpscontroller_Dec);
 
         dec.setOnClickListener(new View.OnClickListener()
@@ -110,7 +112,8 @@ public class GPSController extends AppCompatActivity {
                         e.printStackTrace();
                     }
 
-                    text.setText(location.getLatitude() + "  " + location.getLongitude());
+                    lat.setText("latitude : "+location.getLatitude());
+                    lon.setText("longitude : "+location.getLongitude());
                     Toast.makeText(getApplicationContext(),"신고가 접수되었습니다 "+location.getLatitude()+" "+location.getLongitude(),Toast.LENGTH_SHORT).show();
 
                 }
