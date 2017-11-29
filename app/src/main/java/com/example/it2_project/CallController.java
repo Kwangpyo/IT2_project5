@@ -12,6 +12,8 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 /**
@@ -19,10 +21,27 @@ import android.widget.Toast;
  */
 
 public class CallController extends AppCompatActivity{
+
+    Button call;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        call();
+        setContentView(R.layout.activity_callcontroller);
+
+        call = (Button)findViewById(R.id.callcontroller_SOS);
+
+        call.setOnClickListener(new View.OnClickListener()
+        {
+
+            @Override
+            public void onClick(View view) {
+
+                call();
+
+            }
+        });
+
     }
 
     public void call() {

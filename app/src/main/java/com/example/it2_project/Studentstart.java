@@ -15,18 +15,30 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.karumi.dexter.Dexter;
+import com.karumi.dexter.MultiplePermissionsReport;
+import com.karumi.dexter.PermissionToken;
+import com.karumi.dexter.listener.PermissionRequest;
+import com.karumi.dexter.listener.multi.MultiplePermissionsListener;
+
+import java.util.List;
+
 public class Studentstart extends AppCompatActivity {
 
-    Button logout;
-    Button survey_start;
-    Button SOS;
-    Button singo;
-    Button consult;
-    TextView text;
+    LinearLayout survey_start;
+    LinearLayout SOS;
+    LinearLayout singo;
+    LinearLayout consult;
+    TextView text_id;
+    TextView text_name;
     Student login_student;
+    ImageButton menu;
+    TextView logout;
 
     @Override
     public void onBackPressed() {
@@ -36,17 +48,20 @@ public class Studentstart extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_studentstart);
+        setContentView(R.layout.studentstart);
 
-        logout = (Button)findViewById(R.id.logout_s);
-        survey_start = (Button)findViewById(R.id.survey);
-        SOS = (Button)findViewById(R.id.SOS);
-        singo = (Button)findViewById(R.id.singo);
-        consult = (Button)findViewById(R.id.consult);
-        text = (TextView)findViewById(R.id.textview_s);
+        survey_start = (LinearLayout)findViewById(R.id.studentstart_survey);
+        SOS = (LinearLayout)findViewById(R.id.studentstart_sos);
+        singo = (LinearLayout)findViewById(R.id.studentstart_declare);
+        consult = (LinearLayout)findViewById(R.id.studentstart_consult);
+        text_id = (TextView)findViewById(R.id.studentstart_user);
+        text_name = (TextView)findViewById(R.id.studentstart_name);
+        logout = (TextView)findViewById(R.id.studentstart_logout);
         login_student = (Student)getIntent().getSerializableExtra("student_key");
+        menu = (ImageButton)findViewById(R.id.studentstart_menu);
+        text_id.setText("ID : " + login_student.getId());
+        text_name.setText("name : " + login_student.getName());
 
-        text.setText("ID : " + login_student.getId());
 
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,6 +99,7 @@ public class Studentstart extends AppCompatActivity {
                Intent call = new Intent(getApplicationContext(), CallController.class);
                 startActivity(call);
 
+
             }
         });
 
@@ -113,8 +129,21 @@ public class Studentstart extends AppCompatActivity {
         });
 
 
+        menu.setOnClickListener(new View.OnClickListener()
+        {
+
+            @Override
+            public void onClick(View view) {
+
+                Toast.makeText(getApplicationContext(),"아직 구현하지 않음", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
 
 
     }
+
+
 
 }

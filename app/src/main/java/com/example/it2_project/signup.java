@@ -28,12 +28,12 @@ public class signup extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_signup);
-        signupcomplete = (Button)findViewById(R.id.signupcomplete);
-        newid = (EditText)findViewById(R.id.newid);
-        newpwd = (EditText)findViewById(R.id.newpassword1);
-        newpwdcheck = (EditText)findViewById(R.id.newpassword2);
-        name_text = (EditText)findViewById(R.id.name);
+        setContentView(R.layout.signup);
+        signupcomplete = (Button)findViewById(R.id.login_loginButton);
+        newid = (EditText)findViewById(R.id.signup_id);
+        newpwd = (EditText)findViewById(R.id.signup_pwd1);
+        newpwdcheck = (EditText)findViewById(R.id.signup_pwd2);
+        name_text = (EditText)findViewById(R.id.signup_name);
 
         signupcomplete.setOnClickListener(new View.OnClickListener() {
             @Override
