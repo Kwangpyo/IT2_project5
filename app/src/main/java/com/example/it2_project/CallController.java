@@ -12,6 +12,8 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.telephony.PhoneStateListener;
+import android.telephony.TelephonyManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -23,6 +25,7 @@ import android.widget.Toast;
 public class CallController extends AppCompatActivity{
 
     Button call;
+    Student login_student;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -30,10 +33,10 @@ public class CallController extends AppCompatActivity{
         setContentView(R.layout.activity_callcontroller);
 
         call = (Button)findViewById(R.id.callcontroller_SOS);
+        login_student = (Student)getIntent().getSerializableExtra("student_key");
 
         call.setOnClickListener(new View.OnClickListener()
         {
-
             @Override
             public void onClick(View view) {
 
@@ -63,7 +66,6 @@ public class CallController extends AppCompatActivity{
                                         requestPermissions(new String[]{Manifest.permission.CALL_PHONE}, 1000);
                                     }
 
-
                                 }
                             })
                             .setNegativeButton("아니요", new DialogInterface.OnClickListener() {
@@ -88,28 +90,13 @@ public class CallController extends AppCompatActivity{
             startActivity(intent);
         }
 
-
     }
 
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-
-        if (requestCode == 1000) {
-
-            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-
-                Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:010-1111-2222"));
-
-                if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
-                    startActivity(intent);
-                }
-            } else {
-                Toast.makeText(CallController.this, "권한요청을 거부했습니다.", Toast.LENGTH_SHORT).show();
-
-            }
-        }
 
     }
 
 
-}
+
+
+
+
