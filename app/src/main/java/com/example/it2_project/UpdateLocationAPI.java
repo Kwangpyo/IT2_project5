@@ -16,7 +16,8 @@ public class UpdateLocationAPI {
 
     public void updateGPS(String id, double lon, double lat) {
 
-        String url1 = "http://192.168.0.16:3000/updateDECTaskDocumentURL/";;
+        String url1 = "http://192.168.0.16:3000/updateDECTaskDocumentURL/";
+
         final String openURL = url1 + id + "?lon=" + lon + "&lat=" + lat;
         Log.d("siba",openURL);
 

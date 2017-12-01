@@ -6,8 +6,10 @@ import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -36,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.login);
         setTheme(R.style.Theme_AppCompat_NoActionBar);
 
@@ -57,7 +61,6 @@ public class MainActivity extends AppCompatActivity {
             ps = t.execute().get();
 
             user = ps;
-
 
         }
 
@@ -150,12 +153,15 @@ public class MainActivity extends AppCompatActivity {
 
         }
 
+
     }
 
     @Override
     public void onBackPressed() {
         //super.onBackPressed();
     }
+
+
 
 
 }
