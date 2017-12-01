@@ -87,7 +87,7 @@ public class Studentstart extends AppCompatActivity {
             public void onClick(View view) {
 
                 Intent intent2 = new Intent(getApplicationContext(),SurveyController1.class);
-                intent2.putExtra("student_key",login_student);
+                //intent2.putExtra("student_key",login_student);
 
                 startActivity(intent2);
             }
