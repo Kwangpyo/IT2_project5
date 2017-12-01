@@ -5,11 +5,10 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -18,7 +17,7 @@ import java.util.concurrent.ExecutionException;
 public class MainActivity extends AppCompatActivity {
 
     EditText idInput, passwordInput;
-    Button signup;
+    TextView signup;
     Button login;
     SharedPreferences auto;
     SharedPreferences.Editor autoLogin;
@@ -37,20 +36,20 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        setContentView(R.layout.login);
+        setTheme(R.style.Theme_AppCompat_NoActionBar);
 
-        idInput = (EditText) findViewById(R.id.emailInput);
-        passwordInput = (EditText) findViewById(R.id.passwordInput);
-        signup = (Button) findViewById(R.id.signupButton);
-        login = (Button) findViewById(R.id.loginButton);
+        idInput = (EditText) findViewById(R.id.login_emailInput);
+        passwordInput = (EditText) findViewById(R.id.login_passwordInput);
+        signup = (TextView) findViewById(R.id.login_signupButton);
+        login = (Button) findViewById(R.id.login_loginButton);
 
         auto = getSharedPreferences("auto", Activity.MODE_PRIVATE);
 
         loginId = auto.getString("inputId",null);
         loginPwd = auto.getString("inputPwd",null);
 
-        OpenAPITask t = new OpenAPITask();
+        OpenGetAPITask t = new OpenGetAPITask();
 
         try
         {
@@ -150,9 +149,6 @@ public class MainActivity extends AppCompatActivity {
             });
 
         }
-
-
-
 
     }
 

@@ -18,8 +18,8 @@ import java.util.ArrayList;
  * Created by 고광표 on 2017-11-09.
  */
 
-public class OpenClientAPI {
-    final static String openURL = "http://192.168.0.6:3000/getAllTaskDocuments";
+public class GetUserAPI {
+    final static String openURL = "http://192.168.0.16:3000/getAllTaskDocuments";
     ArrayList<Student> persons = new ArrayList<>();
 
     public ArrayList<Student> getJson() {

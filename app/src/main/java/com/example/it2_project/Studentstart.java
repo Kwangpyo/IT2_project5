@@ -15,16 +15,31 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import com.karumi.dexter.Dexter;
+import com.karumi.dexter.MultiplePermissionsReport;
+import com.karumi.dexter.PermissionToken;
+import com.karumi.dexter.listener.PermissionRequest;
+import com.karumi.dexter.listener.multi.MultiplePermissionsListener;
+
+import java.util.List;
 
 public class Studentstart extends AppCompatActivity {
 
-    Button logout;
-    Button survey_start;
-    Button SOS;
-    Button singo;
-
+    LinearLayout survey_start;
+    LinearLayout SOS;
+    LinearLayout singo;
+    LinearLayout consult;
+    TextView text_id;
+    TextView text_name;
     Student login_student;
+    ImageButton menu;
+    TextView logout;
+
 
     @Override
     public void onBackPressed() {
@@ -34,14 +49,20 @@ public class Studentstart extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_studentstart);
+        setContentView(R.layout.studentstart);
 
-        logout = (Button)findViewById(R.id.logout_s);
-        survey_start = (Button)findViewById(R.id.survey);
-        SOS = (Button)findViewById(R.id.SOS);
-        singo = (Button)findViewById(R.id.singo);
-
+        survey_start = (LinearLayout)findViewById(R.id.studentstart_survey);
+        SOS = (LinearLayout)findViewById(R.id.studentstart_sos);
+        singo = (LinearLayout)findViewById(R.id.studentstart_declare);
+        consult = (LinearLayout)findViewById(R.id.studentstart_consult);
+        text_id = (TextView)findViewById(R.id.studentstart_user);
+        text_name = (TextView)findViewById(R.id.studentstart_name);
+        logout = (TextView)findViewById(R.id.studentstart_logout);
         login_student = (Student)getIntent().getSerializableExtra("student_key");
+        menu = (ImageButton)findViewById(R.id.studentstart_menu);
+        text_id.setText("ID : " + login_student.getId());
+        text_name.setText("name : " + login_student.getName());
+
 
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,6 +87,8 @@ public class Studentstart extends AppCompatActivity {
             public void onClick(View view) {
 
                 Intent intent2 = new Intent(getApplicationContext(),SurveyController1.class);
+                intent2.putExtra("student_key",login_student);
+
                 startActivity(intent2);
             }
         });
@@ -76,57 +99,8 @@ public class Studentstart extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                if(Build.VERSION.SDK_INT >=Build.VERSION_CODES.M)
-                {
-                    int permissionResult = checkSelfPermission(Manifest.permission.CALL_PHONE);
-
-                    if(permissionResult == PackageManager.PERMISSION_DENIED)
-                    {
-                        if(shouldShowRequestPermissionRationale(Manifest.permission.CALL_PHONE))
-                        {
-                            AlertDialog.Builder dialog = new AlertDialog.Builder(Studentstart.this);
-                            dialog.setTitle("권한이 필요합니다")
-                                    .setMessage("이 기능을 사용하기 위해서느 단말기의 \"전화걸기\" 권한이 필요합니다. 계속 하시겠습니까?")
-                                    .setPositiveButton("네", new DialogInterface.OnClickListener() {
-                                        @Override
-                                        public void onClick(DialogInterface dialog, int which) {
-
-                                            if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
-                                            {
-                                                requestPermissions(new String[]{Manifest.permission.CALL_PHONE}, 1000);
-                                            }
-
-                                        }
-                                    })
-                                    .setNegativeButton("아니요", new DialogInterface.OnClickListener()
-                                    {
-
-                                        @Override
-                                        public void onClick(DialogInterface dialog, int which) {
-                                            Toast.makeText(Studentstart.this,"기능을 취소했습니다", Toast.LENGTH_SHORT).show();
-                                        }
-                                    })
-                                    .create()
-                                    .show();
-                        }
-
-                        else{
-                            requestPermissions(new String[]{Manifest.permission.CALL_PHONE},1000);
-                        }
-
-                    }
-                    else
-                    {
-                        Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:010-4447-1663"));
-                        startActivity(intent);
-                    }
-                }
-
-                else
-                {
-                    Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:010-4447-1663"));
-                    startActivity(intent);
-                }
+               Intent call = new Intent(getApplicationContext(), CallController.class);
+                startActivity(call);
 
 
             }
@@ -138,33 +112,41 @@ public class Studentstart extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                
+                Intent dec = new Intent(getApplicationContext(),GPSController.class);
+                dec.putExtra("student_key", login_student);
+                startActivity(dec);
+                finish();
+
+            }
+        });
+
+        consult.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(getApplicationContext(), ConsultController.class);
+                startActivity(intent);
 
             }
         });
 
 
-    }
+        menu.setOnClickListener(new View.OnClickListener()
+        {
 
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+            @Override
+            public void onClick(View view) {
 
-        if (requestCode == 1000) {
-
-            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-
-                Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:010-1111-2222"));
-
-                if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
-                    startActivity(intent);
-                }
-            } else {
-                Toast.makeText(Studentstart.this, "권한요청을 거부했습니다.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),"아직 구현하지 않음", Toast.LENGTH_SHORT).show();
 
             }
-        }
+        });
+
+
 
     }
+
 
 
 }

@@ -2,28 +2,45 @@ package com.example.it2_project;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Parcel;
+import android.os.Parcelable;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.os.Parcelable;
+import android.widget.Toast;
 
 public class SurveyController1 extends AppCompatActivity {
 
-    Button next;
+
     boolean questioncheck=true;
+    HexagonGraph hexagonGraph;
+    double hexFac1=0;
+    double hexFac2=0;
+    double hexFac3=0;
+    double hexFac4=0;
     RadioGroup rg1,rg2,rg3,rg4,rg5,rg6,rg7,rg8,rg9,rg10;
+    public static Student nowStudent;
 
     //public static ArrayList<Question> survey = new ArrayList<>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_survey1);
+        Button next=(Button)findViewById(R.id.NEXT);
+        nowStudent=(Student)getIntent().getSerializableExtra("student_key");
 
-        next = (Button)findViewById(R.id.NEXT);
+
+        Toast.makeText(getApplicationContext(), nowStudent.getName(), Toast.LENGTH_SHORT).show();
+
+        //next = (Button)findViewById(R.id.NEXT);
         rg1 = (RadioGroup)findViewById(R.id.radioGroupQ1);
         rg2 = (RadioGroup)findViewById(R.id.radioGroupQ2);
         rg3 = (RadioGroup)findViewById(R.id.radioGroupQ3);
@@ -43,19 +60,23 @@ public class SurveyController1 extends AppCompatActivity {
 
                 if(checkedId == R.id.Q1_1){
                     Question q1 = new Question("Q1", 1, true);
-                    SurveyList.getInstance().getSurvey().set(1, q1);
+                    SurveyList.getInstance().getSurvey()[1]=q1;
+                    hexFac1=hexFac1+1;
                 }
                 else if(checkedId == R.id.Q1_2){
                     Question q1 = new Question("Q1", 2, true);
-                    SurveyList.getInstance().getSurvey().set(1, q1);
+                    SurveyList.getInstance().getSurvey()[1]=q1;
+                    hexFac1=hexFac1+2;
                 }
                 else if(checkedId == R.id.Q1_3){
                     Question q1 = new Question("Q1", 3, true);
-                    SurveyList.getInstance().getSurvey().set(1, q1);
+                    SurveyList.getInstance().getSurvey()[1]=q1;
+                    hexFac1=hexFac1+3;
                 }
                 else if(checkedId == R.id.Q1_4){
                     Question q1 = new Question("Q1", 4, true);
-                    SurveyList.getInstance().getSurvey().set(1, q1);
+                    SurveyList.getInstance().getSurvey()[1]=q1;
+                    hexFac1=hexFac1+4;
                 }
             }
         });
@@ -68,19 +89,24 @@ public class SurveyController1 extends AppCompatActivity {
 
                 if(checkedId == R.id.Q2_1){
                     Question q2 = new Question("Q2", 1, true);
-                    SurveyList.getInstance().getSurvey().set(2, q2);
+                    SurveyList.getInstance().getSurvey()[2]=q2;
+                    hexFac1=hexFac1+1;
                 }
                 else if(checkedId == R.id.Q2_2){
                     Question q2 = new Question("Q2", 2, true);
-                    SurveyList.getInstance().getSurvey().set(2, q2);
+
+                    SurveyList.getInstance().getSurvey()[2]=q2;
+                    hexFac1=hexFac1+2;
                 }
                 else if(checkedId == R.id.Q2_3){
                     Question q2 = new Question("Q2", 3, true);
-                    SurveyList.getInstance().getSurvey().set(2, q2);
+                    SurveyList.getInstance().getSurvey()[2]=q2;
+                    hexFac1=hexFac1+3;
                 }
                 else if(checkedId == R.id.Q2_4){
                     Question q2 = new Question("Q2", 4, true);
-                    SurveyList.getInstance().getSurvey().set(2, q2);
+                    SurveyList.getInstance().getSurvey()[2]=q2;
+                    hexFac1=hexFac1+4;
                 }
             }
         });
@@ -92,19 +118,23 @@ public class SurveyController1 extends AppCompatActivity {
 
                 if(checkedId == R.id.Q3_1){
                     Question q3 = new Question("Q3", 1, true);
-                    SurveyList.getInstance().getSurvey().set(3, q3);
+                    SurveyList.getInstance().getSurvey()[3]=q3;
+                    hexFac1=hexFac1+1;
                 }
                 else if(checkedId == R.id.Q3_2){
                     Question q3 = new Question("Q3", 2, true);
-                    SurveyList.getInstance().getSurvey().set(3, q3);
+                    SurveyList.getInstance().getSurvey()[3]=q3;
+                    hexFac1=hexFac1+2;
                 }
                 else if(checkedId == R.id.Q3_3){
                     Question q3 = new Question("Q3", 3, true);
-                    SurveyList.getInstance().getSurvey().set(3, q3);
+                    SurveyList.getInstance().getSurvey()[3]=q3;
+                    hexFac1=hexFac1+3;
                 }
                 else if(checkedId == R.id.Q3_4){
                     Question q3 = new Question("Q3", 4, true);
-                    SurveyList.getInstance().getSurvey().set(3, q3);
+                    SurveyList.getInstance().getSurvey()[3]=q3;
+                    hexFac1=hexFac1+4;
                 }
             }
         });
@@ -116,19 +146,23 @@ public class SurveyController1 extends AppCompatActivity {
 
                 if(checkedId == R.id.Q4_1){
                     Question q4 = new Question("Q4", 1, true);
-                    SurveyList.getInstance().getSurvey().set(4, q4);
+                    SurveyList.getInstance().getSurvey()[4]=q4;
+                    hexFac1=hexFac1+1;
                 }
                 else if(checkedId == R.id.Q4_2){
                     Question q4 = new Question("Q4", 2, true);
-                    SurveyList.getInstance().getSurvey().set(4, q4);
+                    SurveyList.getInstance().getSurvey()[4]=q4;
+                    hexFac1=hexFac1+2;
                 }
                 else if(checkedId == R.id.Q4_3){
                     Question q4 = new Question("Q4", 3, true);
-                    SurveyList.getInstance().getSurvey().set(4, q4);
+                    SurveyList.getInstance().getSurvey()[4]=q4;
+                    hexFac1=hexFac1+3;
                 }
                 else if(checkedId == R.id.Q4_4){
                     Question q4 = new Question("Q4", 4, true);
-                    SurveyList.getInstance().getSurvey().set(4, q4);
+                    SurveyList.getInstance().getSurvey()[4]=q4;
+                    hexFac1=hexFac1+4;
                 }
             }
         });
@@ -140,19 +174,23 @@ public class SurveyController1 extends AppCompatActivity {
 
                 if(checkedId == R.id.Q5_1){
                     Question q5 = new Question("Q5", 1, true);
-                    SurveyList.getInstance().getSurvey().set(5, q5);
+                    SurveyList.getInstance().getSurvey()[5]=q5;
+                    hexFac1=hexFac1+1;
                 }
                 else if(checkedId == R.id.Q5_2){
                     Question q5 = new Question("Q5", 2, true);
-                    SurveyList.getInstance().getSurvey().set(5, q5);
+                    SurveyList.getInstance().getSurvey()[5]=q5;
+                    hexFac1=hexFac1+1;
                 }
                 else if(checkedId == R.id.Q5_3){
                     Question q5 = new Question("Q3", 3, true);
-                    SurveyList.getInstance().getSurvey().set(5, q5);
+                    SurveyList.getInstance().getSurvey()[5]=q5;
+                    hexFac1=hexFac1+1;
                 }
                 else if(checkedId == R.id.Q5_4){
                     Question q5 = new Question("Q3", 4, true);
-                    SurveyList.getInstance().getSurvey().set(5, q5);
+                    SurveyList.getInstance().getSurvey()[5]=q5;
+                    hexFac1=hexFac1+1;
                 }
             }
         });
@@ -164,19 +202,23 @@ public class SurveyController1 extends AppCompatActivity {
 
                 if(checkedId == R.id.Q6_1){
                     Question q6 = new Question("Q3", 1, true);
-                    SurveyList.getInstance().getSurvey().set(6, q6);
+                    SurveyList.getInstance().getSurvey()[6]=q6;
+                    hexFac2=hexFac2+1;
                 }
                 else if(checkedId == R.id.Q6_2){
                     Question q6 = new Question("Q3", 2, true);
-                    SurveyList.getInstance().getSurvey().set(6, q6);
+                    SurveyList.getInstance().getSurvey()[6]=q6;
+                    hexFac2=hexFac2+2;
                 }
                 else if(checkedId == R.id.Q6_3){
                     Question q6 = new Question("Q3", 3, true);
-                    SurveyList.getInstance().getSurvey().set(6, q6);
+                    SurveyList.getInstance().getSurvey()[6]=q6;
+                    hexFac2=hexFac2+3;
                 }
                 else if(checkedId == R.id.Q6_4){
                     Question q6 = new Question("Q3", 4, true);
-                    SurveyList.getInstance().getSurvey().set(6, q6);
+                    SurveyList.getInstance().getSurvey()[6]=q6;
+                    hexFac2=hexFac2+4;
                 }
             }
         });
@@ -188,19 +230,24 @@ public class SurveyController1 extends AppCompatActivity {
 
                 if(checkedId == R.id.Q7_1){
                     Question q7 = new Question("Q3", 1, true);
-                    SurveyList.getInstance().getSurvey().set(7, q7);
+                    SurveyList.getInstance().getSurvey()[7]=q7;
+                    hexFac3=hexFac3+1;
                 }
                 else if(checkedId == R.id.Q7_2){
                     Question q7 = new Question("Q3", 2, true);
-                    SurveyList.getInstance().getSurvey().set(7, q7);
+                    SurveyList.getInstance().getSurvey()[7]=q7;
+                    hexFac3=hexFac3+2;
                 }
                 else if(checkedId == R.id.Q7_3){
                     Question q7 = new Question("Q3", 3, true);
-                    SurveyList.getInstance().getSurvey().set(7, q7);
+                    SurveyList.getInstance().getSurvey()[7]=q7;
+                    hexFac3=hexFac3+3;
                 }
                 else if(checkedId == R.id.Q7_4){
                     Question q7 = new Question("Q3", 4, true);
-                    SurveyList.getInstance().getSurvey().set(7, q7);                }
+                    SurveyList.getInstance().getSurvey()[7]=q7;
+                    hexFac4=hexFac4+4;
+                }
             }
         });
         rg8.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -210,21 +257,23 @@ public class SurveyController1 extends AppCompatActivity {
 
                 if(checkedId == R.id.Q8_1){
                     Question q8 = new Question("Q3", 1, true);
-                    SurveyList.getInstance().getSurvey().set(8, q8);
+                    SurveyList.getInstance().getSurvey()[8]=q8;
+                    hexFac2=hexFac2+1;
                 }
                 else if(checkedId == R.id.Q8_2){
                     Question q8 = new Question("Q3", 2, true);
-                    SurveyList.getInstance().getSurvey().set(8, q8);
-
+                    SurveyList.getInstance().getSurvey()[8]=q8;
+                    hexFac2=hexFac2+2;
                 }
                 else if(checkedId == R.id.Q8_3){
                     Question q8 = new Question("Q3", 3, true);
-                    SurveyList.getInstance().getSurvey().set(8, q8);
+                    SurveyList.getInstance().getSurvey()[8]=q8;
+                    hexFac2=hexFac2+3;
                 }
                 else if(checkedId == R.id.Q8_4){
                     Question q8 = new Question("Q3", 4, true);
-                    SurveyList.getInstance().getSurvey().set(8, q8);
-
+                    SurveyList.getInstance().getSurvey()[8]=q8;
+                    hexFac2=hexFac2+4;
                 }
             }
         });
@@ -235,20 +284,23 @@ public class SurveyController1 extends AppCompatActivity {
 
                 if(checkedId == R.id.Q9_1){
                     Question q9 = new Question("Q3", 1, true);
-                    SurveyList.getInstance().getSurvey().set(9, q9);
-
+                    SurveyList.getInstance().getSurvey()[9]=q9;
+                    hexFac3=hexFac3+1;
                 }
                 else if(checkedId == R.id.Q9_2){
                     Question q9 = new Question("Q3", 2, true);
-                    SurveyList.getInstance().getSurvey().set(9, q9);
+                    SurveyList.getInstance().getSurvey()[9]=q9;
+                    hexFac3=hexFac3+2;
                 }
                 else if(checkedId == R.id.Q9_3){
                     Question q9 = new Question("Q3", 3, true);
-                    SurveyList.getInstance().getSurvey().set(9, q9);
+                    SurveyList.getInstance().getSurvey()[9]=q9;
+                    hexFac3=hexFac3+3;
                 }
                 else if(checkedId == R.id.Q9_4){
                     Question q9 = new Question("Q3", 4, true);
-                    SurveyList.getInstance().getSurvey().set(9, q9);
+                    SurveyList.getInstance().getSurvey()[9]=q9;
+                    hexFac3=hexFac3+4;
                 }
             }
         });
@@ -259,36 +311,40 @@ public class SurveyController1 extends AppCompatActivity {
 
                 if(checkedId == R.id.Q10_1){
                     Question q10 = new Question("Q3", 1, true);
-                    SurveyList.getInstance().getSurvey().set(10, q10);
+                    SurveyList.getInstance().getSurvey()[10]=q10;
+                    hexFac2=hexFac2+1;
                 }
                 else if(checkedId == R.id.Q10_2){
                     Question q10 = new Question("Q3", 2, true);
-                    SurveyList.getInstance().getSurvey().set(10, q10);
+                    SurveyList.getInstance().getSurvey()[10]=q10;
+                    hexFac3=hexFac3+2;
                 }
                 else if(checkedId == R.id.Q10_3){
                     Question q10= new Question("Q3", 3, true);
-                    SurveyList.getInstance().getSurvey().set(10, q10);
+                    SurveyList.getInstance().getSurvey()[10]=q10;
+                    hexFac3=hexFac3+3;
                 }
                 else if(checkedId == R.id.Q10_4){
                     Question q10= new Question("Q3", 4, true);
-                    SurveyList.getInstance().getSurvey().set(10, q10);
+                    SurveyList.getInstance().getSurvey()[10]=q10;
+                    hexFac3=hexFac3+4;
                 }
             }
         });
 
 
         next.setOnClickListener(new View.OnClickListener(){
-
             @Override
             public void onClick(View view) {
 
                 for(int i=1; i<=10;i++){
-                    if(SurveyList.getInstance().getSurvey().get(i).isQuestionCheck()==false){
+                    if(SurveyList.getInstance().getSurvey()[i].isQuestionCheck()==false){
                         questioncheck=false;
 
                     }
 
                 }
+
 
                 if(questioncheck==false){
                     AlertDialog.Builder alert = new AlertDialog.Builder(SurveyController1.this);
@@ -300,21 +356,32 @@ public class SurveyController1 extends AppCompatActivity {
                     });
                     alert.setMessage("설문조사가 완료되지 않았습니다.");
                     alert.show();
+                    questioncheck=true;
                 }
                 else{
-                    Intent intent1 = new Intent(getApplicationContext(), SurveyController2.class);
+                    Log.d("gyurie", "고파");
+                    Log.d("kkp",String.valueOf(hexFac1));
+                    Log.d("kkp1",String.valueOf(hexFac2));
+                    Log.d("kkp2",String.valueOf(hexFac3));
+                    Log.d("kkp3",String.valueOf(hexFac4));
+                    hexagonGraph = new HexagonGraph(hexFac1,hexFac2,hexFac3,hexFac4,0,0);
+                   /*     hexagonGraph.setQT1(hexFac1);
+                        hexagonGraph.setQT2(hexFac2);
+                        hexagonGraph.setQT3(hexFac3);
+                        hexagonGraph.setQT4(hexFac4); */
+
+                    Log.d("gyurie", "배가");
+
+                    nowStudent.getHistory().add(hexagonGraph);
+                    Log.d("gyurie", "흑흑");
+
+                    Intent intent1 = new Intent(getApplicationContext(),SurveyController2.class);
+                    intent1.putExtra("student_key",nowStudent);
+                    Log.d("gyurie","요건?");
                     startActivity(intent1);
                 }
-
-
-
             }
         });
-
-
-
-
-
 
     }
 
