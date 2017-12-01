@@ -8,44 +8,45 @@
     android:background="@drawable/background">
 
 
-
-
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/gpscontroller_back"
+        android:textAlignment="center"
+        android:background="@drawable/border"
+        android:src="@drawable/back"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"/>
 
     <TextView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/gpslon"
-        android:layout_above="@+id/gpscontroller_Dec"
-        android:layout_centerHorizontal="true"
+        android:layout_height="20dp"
+        android:text="log out"
+        android:layout_alignParentRight="true"
+        android:layout_gravity="center"
+        android:gravity="center"
         android:textColor="#fff"
-        android:textSize="18dp"
-        android:text="Longitude"/>
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="5dp"
+        android:id="@+id/gpscontroller_logout"
+        />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/gpslat"
-        android:layout_above="@+id/gpslon"
-        android:layout_centerHorizontal="true"
-        android:textColor="#fff"
-        android:textSize="18dp"
-        android:text="Latitude"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/gpscontroller_Dec"
-        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
         android:layout_centerHorizontal="true"
-        android:text="신고"
-        android:textSize="16dp"
+        android:text="신고하기"
+        android:textSize="30dp"
         android:textColor="#fff"
         android:textAlignment="center"
-        android:background="@drawable/border"
+        android:background="@drawable/border_white"
         android:layout_gravity="center"
         android:letterSpacing="0.025"
         android:padding="10dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
         />
 
 </RelativeLayout>

@@ -39,7 +39,6 @@
         <activity android:name=".SurveyController2" />
         <activity android:name=".ErrorPage" />
         <activity android:name=".SurveyController3" />
-        <activity android:name=".CallController" />
         <activity android:name=".ConsultController" />
         <activity android:name=".GPSController" />
     </application>

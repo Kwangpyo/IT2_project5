@@ -177,6 +177,11 @@ public class Studentstart extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onBackPressed() {
+       // super.onBackPressed();
+    }
+
 
 
 }
