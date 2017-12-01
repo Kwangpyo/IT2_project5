@@ -16,7 +16,7 @@ public class AddUserAPI {
 
     public void add(String id, String name, String password) {
 
-        String url1 = "http://192.168.0.6:3000/addTaskDocumentURL/";
+        String url1 = "http://192.168.0.16:3000/addTaskDocumentURL/";
         final String openURL = url1 + id + "?n=" + name + "&s=student" + "&p=" + password;
         Log.d("siba",openURL);
 
