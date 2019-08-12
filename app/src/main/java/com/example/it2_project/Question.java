@@ -1,10 +1,12 @@
 package com.example.it2_project;
 
+import java.io.Serializable;
+
 /**
  * Created by 고광표 on 2017-11-22.
  */
 
-public class Question {
+public class Question implements Serializable {
 
     String Question_title;
     int selection;

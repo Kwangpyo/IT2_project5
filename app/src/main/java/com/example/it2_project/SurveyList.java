@@ -1,27 +1,37 @@
 package com.example.it2_project;
 
+import com.google.android.gms.games.quest.Quest;
+
 import java.util.ArrayList;
 
 /**
  * Created by GyuRie on 2017-11-23.
  */
 
-class SurveyList {
-    private static final SurveyList ourInstance = new SurveyList();
+public class SurveyList {
 
-    private ArrayList<Question> survey;
+    private Question[] survey;
 
 
     private SurveyList(){
-        survey = new ArrayList<Question>();
+        survey = new Question[32];
     }
-    private static SurveyList instance;
+    private static SurveyList ourInstance;
 
     public static SurveyList getInstance(){
-        if(instance==null) instance=new SurveyList();
-        return instance;
+        Question questionInst=new Question(null, 0, false);
+        if(ourInstance==null){
+            ourInstance=new SurveyList();
+            for(int i=0; i<32; i++){
+
+                ourInstance.getSurvey()[i]=questionInst;
+            }
+
+
+        }
+        return ourInstance;
     }
-    public ArrayList<Question> getSurvey(){
+    public Question[] getSurvey(){
         return survey;
     }
 

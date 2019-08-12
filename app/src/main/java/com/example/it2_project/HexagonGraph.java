@@ -1,10 +1,12 @@
 package com.example.it2_project;
 
+import java.io.Serializable;
+
 /**
  * Created by 고광표 on 2017-11-22.
  */
 
-public class HexagonGraph {
+public class HexagonGraph implements Serializable {
 
     double QT1;
     double QT2;
@@ -12,6 +14,11 @@ public class HexagonGraph {
     double QT4;
     double QT5;
     double QT6;
+
+    public HexagonGraph()
+    {
+
+    }
 
     public HexagonGraph(double QT1,double QT2,double QT3,double QT4,double QT5,double QT6)
     {
