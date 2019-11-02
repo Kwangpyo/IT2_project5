@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.login);
+        setTheme(R.style.Theme_AppCompat_NoActionBar);
 
         idInput = (EditText) findViewById(R.id.login_emailInput);
         passwordInput = (EditText) findViewById(R.id.login_passwordInput);
